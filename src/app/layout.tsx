@@ -1,15 +1,38 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import { AppWrapper } from "@/context";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const integralCFFont = localFont({
+  src: "../../public/fonts/Fontspring-DEMO-integralcf-bold.otf", // Root-relative path for public folder
+  variable: "--font-integral-cf", // CSS variable for this font
+  weight: "700", // Specify the weight (adjust based on the font’s characteristics)
+  style: "normal", // Specify the style
 });
 
-const geistMono = Geist_Mono({
+const satoshiFont = localFont({
+  src: "../../public/fonts/Satoshi-Variable.ttf", // Root-relative path for `public` folder
+  variable: "--font-satoshi",
+  weight: "100 900", // Specify the weight range
+  style: "normal",
+});
+
+const clashFont = localFont({
+  src: "../../public/fonts/ClashDisplay-Variable.ttf", // Root-relative path for `public` folder
+  variable: "--font-clash",
+  weight: "100 900", // Specify the weight range
+  style: "normal",
+});
+
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: "100 900",
 });
 
 export const metadata: Metadata = {
@@ -23,11 +46,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en"  className={`${satoshiFont.variable} ${clashFont.variable} ${integralCFFont.variable}`}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+       <AppWrapper>{children}</AppWrapper> 
       </body>
     </html>
   );
