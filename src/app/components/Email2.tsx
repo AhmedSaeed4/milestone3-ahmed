@@ -13,7 +13,7 @@ const Email2 = () => {
                
             </div>
             <div className="w-auto h-auto sm:mx-[49px] mt-[72px] flex ">
-                <input type="text" placeholder="      your@email.com" className=" bg-[#F9F9F9] w-[354px] h-[56px]"/>
+                <input type="text" placeholder="      your@email.com" className=" bg-[#F9F9F9] w-auto h-[56px]"/>
                 <button className=" w-auto  h-auto py-[16px] px-[32px] flex gap-[10px] bg-[#2A254B]"> 
                     <p className="font-satoshi font-normal text-[16px] leading-[24px] text-center text-nowrap text-white">Sign up</p>
                 </button>

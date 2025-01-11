@@ -20,7 +20,7 @@ import {
 const NavBar2 = () => {
   const { cart , setCart } = useAppContext();
   return (
-    <div className=" w-auto flex items-center text-center sm:px-[80px] justify-between text-nowrap pl-[24px] py-[25px]   ">
+    <div className=" w-auto flex items-center text-center sm:px-[80px] justify-between text-nowrap px-[24px] py-[25px]   ">
 
     <h1 className="   leading-[29.52px] font-normal  font-clash text-[24px] "><Link href="/">Avion</Link></h1>  
     <ul className="  h-auto w-auto   gap-[44px] text-[#726E8D] lg:flex hidden  font-satoshi font-normal text-[16px] leading-[21.6px] ">
